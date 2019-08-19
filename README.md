@@ -10,6 +10,6 @@
 
 ## What are Microservices?
 A service can be defined as a microservice if it has the following three things
-__* The service is Exposed by REST__
-__* Small well chosen Deployable Units__
-__* Cloud Enabled__
+* __The service is Exposed by REST__
+* __Small well chosen Deployable Units__
+* __Cloud Enabled__
