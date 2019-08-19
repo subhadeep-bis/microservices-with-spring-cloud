@@ -13,3 +13,10 @@ A service can be defined as a microservice if it has the following three things
 * __The service is Exposed by REST__
 * __Small well chosen Deployable Units__
 * __Cloud Enabled__
+
+## Challenges with building Microservices
+1.  BOUNDED CONTEXT
+2.  CONFIGURATION MANAGEMENT
+3.  DYNAMIC SCALE UP/DOWN
+4.  VISIBILITY
+5.  FAULT TOLERENCE
