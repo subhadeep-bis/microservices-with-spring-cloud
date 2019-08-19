@@ -15,8 +15,10 @@ A service can be defined as a microservice if it has the following three things
 * __Cloud Enabled__
 
 ## Challenges with building Microservices
-1.  BOUNDED CONTEXT
-2.  CONFIGURATION MANAGEMENT
-3.  DYNAMIC SCALE UP/DOWN
-4.  VISIBILITY
-5.  FAULT TOLERENCE
+| Challenges                        |   Solution                                                     |
+| --------------------------------- |:--------------------------------------------------------------:|
+| 1.  BOUNDED CONTEXT               | Evolutionary. This is something that comes with __EXPERIENCE__ |
+| 2.  CONFIGURATION MANAGEMENT      | __Spring Cloud Config Server__                                 |
+| 3.  DYNAMIC SCALE UP/DOWN         | __Eureka, Ribbon Load Balancing, Feign__                       |
+| 4.  VISIBILITY                    | __Zipkin Distributed Tracing, Netflix API Gateway__            |  
+| 5.  FAULT TOLERENCE               | __Hystrix__                                                    |
