@@ -16,7 +16,7 @@ A service can be defined as a microservice if it has the following three things
 
 ## Challenges with building Microservices
 | Challenges                        |   Solution                                                     |
-| --------------------------------- |:--------------------------------------------------------------:|
+| --------------------------------- |--------------------------------------------------------------  |
 | 1.  BOUNDED CONTEXT               | Evolutionary. This is something that comes with __EXPERIENCE__ |
 | 2.  CONFIGURATION MANAGEMENT      | __Spring Cloud Config Server__                                 |
 | 3.  DYNAMIC SCALE UP/DOWN         | __Eureka, Ribbon Load Balancing, Feign__                       |
