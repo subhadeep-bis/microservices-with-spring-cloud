@@ -22,3 +22,8 @@ A service can be defined as a microservice if it has the following three things
 | 3.  DYNAMIC SCALE UP/DOWN         | __Eureka, Ribbon Load Balancing, Feign__                       |
 | 4.  VISIBILITY                    | __Zipkin Distributed Tracing, Netflix API Gateway__            |  
 | 5.  FAULT TOLERENCE               | __Hystrix__                                                    |
+
+## Advantages of Microservice Architecture
+* New Technology and Process adaption
+* Dynamic Scaling
+* Faster Release Cycles
