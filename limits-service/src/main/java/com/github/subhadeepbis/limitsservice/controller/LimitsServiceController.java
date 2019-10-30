@@ -20,7 +20,7 @@ public class LimitsServiceController {
     }
 
     /**
-     * Uncomment the properties from application.properties so that it can be used by the following api
+     * Uncomment the properties from bootstrap.properties so that it can be used by the following api
      * Normally if you dont uncomment it will still work, because the data will fetched from the git.
      * @return
      */
