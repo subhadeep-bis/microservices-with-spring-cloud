@@ -1,10 +1,11 @@
-package com.github.subhadeepbis.currencyexchangeservice.exception;
+package com.github.subhadeepbis.currencyexchangeservice.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Setter;
+import lombok.Getter;
+
 import java.util.Date;
 
-@Setter
+@Getter
 @AllArgsConstructor
 public class ErrorResponse {
     private Date timeStampDate;

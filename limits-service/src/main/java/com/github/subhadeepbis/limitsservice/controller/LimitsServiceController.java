@@ -2,6 +2,7 @@ package com.github.subhadeepbis.limitsservice.controller;
 
 import com.github.subhadeepbis.limitsservice.configuration.LimitsServiceConfiguration;
 import com.github.subhadeepbis.limitsservice.model.LimitConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ public class LimitsServiceController {
 
     private LimitsServiceConfiguration configuration;
 
+    @Autowired
     public LimitsServiceController(LimitsServiceConfiguration limitsServiceConfiguration) {
         this.configuration = limitsServiceConfiguration;
     }
