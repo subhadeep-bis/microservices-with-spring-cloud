@@ -41,7 +41,7 @@ public class CurrencyConversionController {
          * This method returns a ResponseEntity. If you would have used getForObject() then it would have returned an Object.
          */
         ResponseEntity<CurrencyConversionBean> responseEntity = restTemplate.getForEntity(
-                "http://localhost:8002/currency-exchange-service/from/{from}/to/{to}",
+                "http://localhost:8001/currency-exchange-service/from/{from}/to/{to}",
                 CurrencyConversionBean.class, uriVariables);
         CurrencyConversionBean body = responseEntity.getBody();
         body.setQuantity(quantity);

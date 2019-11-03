@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * between multiple instances of currency-exchange-service.
  * So, we will make changes in application.properties/bootstrap.properties
  */
-//@FeignClient(name="currency-exchange-service", url = "localhost:8002")
+//@FeignClient(name="currency-exchange-service", url = "localhost:8000")
 @FeignClient(name="currency-exchange-service")
 @RibbonClient(name = "currency-exchange-service")
 public interface CurrencyExchangeServiceProxy {
