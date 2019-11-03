@@ -33,7 +33,7 @@ public class CurrencyConversionController {
         uriVariables.put("from", from);
         uriVariables.put("to", to);
         /**
-         * "uriVariables" below is used to fetch the values that are to be replaced in the uri (http://localhost:8002...) eg, {from} will be searched
+         * "uriVariables" below is used to fetch the values that are to be replaced in the uri (http://localhost:8001...) eg, {from} will be searched
          * as a key in the uriVariables Map and since we have a key in the Map, it will fetch and assign it directly to the uri
          * http://localhost:8002/currency-exchange-service/from/{from}/to/{to}
          * if from = USD and to =  INR then the URI would look something like this
