@@ -2,6 +2,8 @@ package com.github.subhadeepbis.currencyconversionservice.controller;
 
 import com.github.subhadeepbis.currencyconversionservice.model.CurrencyConversionBean;
 import com.github.subhadeepbis.currencyconversionservice.proxy.CurrencyExchangeServiceProxy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,8 @@ import java.util.Map;
 @RequestMapping("/currency-converter")
 public class CurrencyConversionController {
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private CurrencyExchangeServiceProxy proxy;
 
@@ -28,7 +32,8 @@ public class CurrencyConversionController {
     public CurrencyConversionBean convertCurrency(@PathVariable(value = "from") String from,
                                                   @PathVariable(value="to") String to,
                                                   @PathVariable(value="quantity") BigDecimal quantity) {
-        // Problem 1 which Feign Solves
+        logger.info("Enter convertCurrency() -->");
+        // Problem 1 which Feign Solves: a lot of extra coding needs to be done just to send a request.
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("from", from);
         uriVariables.put("to", to);
@@ -46,6 +51,8 @@ public class CurrencyConversionController {
         CurrencyConversionBean body = responseEntity.getBody();
         body.setQuantity(quantity);
         body.setTotalCalculatedAmount(quantity.multiply(body.getConversionMultiple()));
+        logger.info("{}", body);
+        logger.info("Exit convertCurrency() <--");
         return body;
     }
 
@@ -66,9 +73,12 @@ public class CurrencyConversionController {
     public CurrencyConversionBean convertCurrencyUsingFeign(@PathVariable(value = "from") String from,
                                                   @PathVariable(value="to") String to,
                                                   @PathVariable(value="quantity") BigDecimal quantity) {
+        logger.info("Enter convertCurrencyUsingFeign() -->");
         CurrencyConversionBean response = proxy.retrieveExchangeValue(from, to);
         response.setQuantity(quantity);
         response.setTotalCalculatedAmount(quantity.multiply(response.getConversionMultiple()));
+        logger.info("{}", response);
+        logger.info("Exit convertCurrencyUsingFeign() <--");
         return response;
     }
 }

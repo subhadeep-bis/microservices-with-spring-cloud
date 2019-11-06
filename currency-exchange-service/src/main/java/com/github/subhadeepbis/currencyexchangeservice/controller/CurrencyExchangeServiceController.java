@@ -2,6 +2,8 @@ package com.github.subhadeepbis.currencyexchangeservice.controller;
 
 import com.github.subhadeepbis.currencyexchangeservice.model.ExchangeValue;
 import com.github.subhadeepbis.currencyexchangeservice.repository.ExchangeValueRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpHeaders;
@@ -17,6 +19,8 @@ import java.net.URI;
 @RequestMapping("/currency-exchange")
 public class CurrencyExchangeServiceController {
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 //    Springboot provides something called environment from which we can get the port on which the application is running
     private Environment environment;
     private ExchangeValueRepository repository;
@@ -29,12 +33,16 @@ public class CurrencyExchangeServiceController {
 
     @GetMapping("/from/{from}/to/{to}")
     public ExchangeValue retrieveExchangeValue(@PathVariable("from") String from, @PathVariable("to") String to) {
+        logger.info("Enter retrieveExchangeValue() -->");
         Integer port = Integer.parseInt(environment.getProperty("local.server.port"));
         ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
         if(exchangeValue != null) {
             exchangeValue.setPort(port);
+            logger.info("ExchangeValue --> {}", exchangeValue);
+            logger.info("Exit retrieveExchangeValue() <--");
             return exchangeValue;
         }
+        logger.info("Exit retrieveExchangeValue() <--");
         return new ExchangeValue();
     }
 
