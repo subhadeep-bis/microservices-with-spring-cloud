@@ -58,12 +58,12 @@ A service can be defined as a microservice if it has the following three things
 Generally, you can call the microservice directly by calling it's implemented URI.
 Eg: Here the microservice is __currency-exchange-service__ served on port __8100__ and its URI is the follows:
 ```
-http://localhost:8100/currency-converter/feign/from/EUR/to/INR/quantity/12
+http://localhost:8000/currency-exchange-service/from/EUR/to/INR
 ```
 However, calling this URI directly won't result in the request to go through the __Zuul gateway__. For any request to go through the Zuul api gateway you need to follow the given notation
 ```
 http://localhost:{zuul:port}/{application-name}/{an-implemented-uri-of-the-application}
 or,
-http://localhost:8765/currency-conversion-service/currency-converter/feign/from/EUR/to/INR/quantity/12
+http://localhost:8765/currency-exchange-service/currency-exchange-service/from/EUR/to/INR
 ```
 Once, you hit the above URI, the Zuul will log the request since you implemented a __logging filter__ and then send the request to the __currency-exchange-service__
