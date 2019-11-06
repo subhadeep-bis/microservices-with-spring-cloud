@@ -66,4 +66,4 @@ http://localhost:{zuul:port}/{application-name}/{an-implemented-uri-of-the-appli
 or,
 http://localhost:8765/currency-conversion-service/currency-converter/feign/from/EUR/to/INR/quantity/12
 ```
-Once, you hit the above URI, the Zuul will log the request since you implemented a logging filter and then send the request to the __currency-exchange-service__
+Once, you hit the above URI, the Zuul will log the request since you implemented a __logging filter__ and then send the request to the __currency-exchange-service__
