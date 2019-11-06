@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/currency-exchange-service")
+@RequestMapping("/currency-exchange")
 public class CurrencyExchangeServiceController {
 
 //    Springboot provides something called environment from which we can get the port on which the application is running
